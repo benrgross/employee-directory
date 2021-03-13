@@ -18,9 +18,12 @@ export const Employee = ({ employees }) => {
             <tbody>
               {employees.map((employee) => {
                 return (
-                  <tr className="text-center">
+                  <tr key={employee.id.value} className="text-center">
                     <td>
-                      <img src={employee.picture.medium} />
+                      <img
+                        alt={`img-of-employee#${employee.id.value}`}
+                        src={employee.picture.medium}
+                      />
                     </td>
                     <td>{employee.name.first}</td>
                     <td>{employee.name.last}</td>

@@ -9,6 +9,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     employees: [],
+    search: "",
   };
 
   componentDidMount() {
@@ -29,12 +30,25 @@ class App extends React.Component {
     this.setState({ employees: results });
   };
 
+  handleChange = (event) => {
+    const { value } = event.target;
+
+    this.setState({ search: value });
+  };
+
   render() {
+    let searchName = this.state.employees.filter((employee) => {
+      return (
+        employee.name.first
+          .toLowerCase()
+          .indexOf(this.state.search.toLowerCase()) !== -1
+      );
+    });
     return (
       <Wrapper>
         <Title />
-        <Search />
-        <Employee employees={this.state.employees} />
+        <Search value={this.state.search} handleChange={this.handleChange} />
+        <Employee employees={searchName} />
       </Wrapper>
     );
   }
