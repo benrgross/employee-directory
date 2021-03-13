@@ -1,26 +1,32 @@
 import React from "react";
 
-export const Employee = () => {
+export const Employee = ({ employees }) => {
   return (
     <div className="container-fluid">
       <table className="table table-striped">
         <thead>
-          <tr>
+          <tr className="text-center">
             <th>Image</th>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Email</th>
             <th>Phone</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Image</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>phone</td>
-          </tr>
+          {employees.map((employee) => {
+            return (
+              <tr className="text-center">
+                <td>
+                  <img src={employee.picture.medium} />
+                </td>
+                <td>{employee.name.first}</td>
+                <td>{employee.name.last}</td>
+                <td className="text-center">{employee.email}</td>
+                <td>{employee.cell}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

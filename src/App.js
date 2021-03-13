@@ -7,34 +7,32 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    employees: null,
+    employees: [],
   };
 
   componentDidMount() {
-    // fetch some dad jokes
     this.getEmployees();
   }
 
   getEmployees = async () => {
-    const { data } = await axios.get(
-      "https://randomuser.me/api/?results=200&nat=us",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    );
-    console.log("data", data);
+    const {
+      data: { results },
+    } = await axios.get("https://randomuser.me/api/?results=50&nat=us", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    console.log("data", results);
+    // let employeesArr = data;
 
-    this.setState({ employees: data });
+    this.setState({ employees: results });
   };
 
   render() {
-    console.log(this.state.employees);
     return (
       <Wrapper>
         <Title />
-        <Employee />
+        <Employee employees={this.state.employees} />
       </Wrapper>
     );
   }
