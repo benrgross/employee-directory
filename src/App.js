@@ -3,6 +3,7 @@ import axios from "axios";
 import Title from "./components/Title/Title";
 import Wrapper from "./components/Wrapper/index";
 import Employee from "./components/Employee/Employee";
+import Search from "./components/Search/Search";
 import "./App.css";
 
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
     return (
       <Wrapper>
         <Title />
+        <Search />
         <Employee employees={this.state.employees} />
       </Wrapper>
     );
