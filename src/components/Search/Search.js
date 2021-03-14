@@ -3,19 +3,16 @@ import "./style.css";
 
 export const Search = ({ handleChange, value }) => {
   return (
-    <div className="row search shadow">
+    <div className="row search container-fluid">
       <div className="input-group col-sm-12 col-md-12">
         <form className="form-inline my-2 my-lg-0">
-          <span style={{ marginRight: "10px" }}>
-            Search Employees by Name:{" "}
-          </span>
           <input
             onChange={(event) => handleChange(event)}
             value={value}
             className="form-control mr-sm-2"
             name="search"
             type="text"
-            placeholder="Search"
+            placeholder="Search by Name"
             aria-label="Search"
           />
           <button

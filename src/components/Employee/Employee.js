@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
+import "./style.css";
 
 export const Employee = ({ employees, sort, toggleIcon }) => {
   console.log(toggleIcon);
@@ -12,13 +13,8 @@ export const Employee = ({ employees, sort, toggleIcon }) => {
             <thead>
               <tr className="text-center md:flex bg-white shadow-lg items-center justify-between">
                 <th>Image</th>
-                <th>
-                  First Name{" "}
-                  {toggleIcon ? (
-                    <FaArrowDown onClick={() => sort()} />
-                  ) : (
-                    <FaArrowUp onClick={() => sort()} />
-                  )}
+                <th className="arrow" onClick={() => sort()}>
+                  First Name {toggleIcon ? <FaArrowDown /> : <FaArrowUp />}
                 </th>
                 <th>Last Name</th>
                 <th>Email</th>
