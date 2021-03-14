@@ -13,10 +13,10 @@ export const Title = () => {
         </header>
       </div>
       <div className=" row h4 d-flex justify-content-left ">
-        <h4> Search Direcory by Name</h4>{" "}
+        <h4> Search Direcory by Name</h4>
       </div>
       <div className=" row h5 d-flex justify-content-left ">
-        <h5> & Order Table by Name or City</h5>
+        <h5> Order Table by Name or City</h5>
       </div>
     </>
   );

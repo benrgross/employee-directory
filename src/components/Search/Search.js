@@ -7,10 +7,9 @@ export const Search = ({ handleChange, value }) => {
       <div className="input-group col-sm-12 col-md-12">
         <form className="form-inline my-2 my-lg-0 ">
           <input
-            className="shadow"
             onChange={(event) => handleChange(event)}
             value={value}
-            className="form-control mr-sm-2"
+            className="form-control mr-sm-2 shadow"
             name="search"
             type="text"
             placeholder="Search by Name"
