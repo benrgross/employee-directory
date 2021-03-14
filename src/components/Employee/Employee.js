@@ -3,8 +3,13 @@ import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import "./style.css";
 
-export const Employee = ({ employees, sort, toggleIcon }) => {
-  console.log(toggleIcon);
+export const Employee = ({
+  employees,
+  sortName,
+  toggleName,
+  sortCity,
+  toggleCity,
+}) => {
   return (
     <div style={{ padding: "0px" }} className="container-fluid">
       <div className="row">
@@ -13,11 +18,15 @@ export const Employee = ({ employees, sort, toggleIcon }) => {
             <thead>
               <tr className="text-center md:flex bg-white shadow-lg items-center justify-between">
                 <th>Image</th>
-                <th className="arrow" onClick={() => sort()}>
-                  First Name {toggleIcon ? <FaArrowDown /> : <FaArrowUp />}
+                <th className="arrow" onClick={() => sortName()}>
+                  Name {toggleName ? <FaArrowDown /> : <FaArrowUp />}
                 </th>
-                <th>Last Name</th>
+                {/* <th>Last Name</th> */}
                 <th>Email</th>
+                <th className="arrow" onClick={() => sortCity()}>
+                  City {toggleCity ? <FaArrowDown /> : <FaArrowUp />}{" "}
+                </th>
+
                 <th>Phone</th>
               </tr>
             </thead>
@@ -34,9 +43,9 @@ export const Employee = ({ employees, sort, toggleIcon }) => {
                         src={employee.picture.medium}
                       />
                     </td>
-                    <td>{employee.name.first}</td>
-                    <td>{employee.name.last}</td>
+                    <td>{`${employee.name.first}  ${employee.name.last}`}</td>
                     <td>{employee.email}</td>
+                    <td>{employee.location.city}</td>
                     <td>{employee.cell}</td>
                   </tr>
                 );

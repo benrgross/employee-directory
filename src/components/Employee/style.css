@@ -1,6 +1,7 @@
 .container-fluid {
   padding: 0px;
-  width: 90%;
+  width: 95%;
+  font-size: 14px;
 }
 
 .arrow:hover {

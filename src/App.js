@@ -12,6 +12,7 @@ class App extends React.Component {
     employees: [],
     search: "",
     descending: true,
+    city: true,
   };
 
   componentDidMount() {
@@ -82,6 +83,39 @@ class App extends React.Component {
     }
   };
 
+  sortByCity = () => {
+    if (this.state.city === true) {
+      let ascending = this.state.employees.sort((a, b) => {
+        let fa = a.location.city.toLowerCase(),
+          fb = b.location.city.toLowerCase();
+
+        if (fa > fb) {
+          return -1;
+        }
+        if (fa < fb) {
+          return 1;
+        }
+        return 0;
+      });
+      this.setState({ employees: ascending, city: false });
+    } else {
+      console.log("false click");
+      let descending = this.state.employees.sort((a, b) => {
+        let fa = a.location.city.toLowerCase(),
+          fb = b.location.city.toLowerCase();
+
+        if (fa < fb) {
+          return -1;
+        }
+        if (fa > fb) {
+          return 1;
+        }
+        return 0;
+      });
+      this.setState({ employees: descending, city: true });
+    }
+  };
+
   render() {
     let searchName = this.state.employees.filter((employee) => {
       return (
@@ -96,8 +130,10 @@ class App extends React.Component {
         <Search value={this.state.search} handleChange={this.handleChange} />
         <Employee
           employees={searchName}
-          sort={this.sortByName}
-          toggleIcon={this.state.descending}
+          sortName={this.sortByName}
+          toggleName={this.state.descending}
+          sortCity={this.sortByCity}
+          toggleCity={this.state.city}
         />
       </Wrapper>
     );
