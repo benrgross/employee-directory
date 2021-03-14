@@ -3,7 +3,7 @@ import "./style.css";
 
 export const Search = ({ handleChange, value }) => {
   return (
-    <div className="row search ">
+    <div className="row search shadow">
       <div className="input-group col-sm-12 col-md-12">
         <form className="form-inline my-2 my-lg-0">
           <span style={{ marginRight: "10px" }}>
