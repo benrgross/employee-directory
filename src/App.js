@@ -11,8 +11,8 @@ class App extends React.Component {
   state = {
     employees: [],
     search: "",
-    descending: true,
-    city: true,
+    nameDescending: true,
+    cityDecending: true,
   };
 
   componentDidMount() {
@@ -28,7 +28,7 @@ class App extends React.Component {
       },
     });
     console.log("data", results);
-    let descending = results.sort((a, b) => {
+    let nameDescending = results.sort((a, b) => {
       let fa = a.name.first.toLowerCase(),
         fb = b.name.first.toLowerCase();
 
@@ -41,7 +41,7 @@ class App extends React.Component {
       return 0;
     });
 
-    this.setState({ employees: descending });
+    this.setState({ employees: nameDescending });
   };
 
   handleChange = (event) => {
@@ -51,7 +51,7 @@ class App extends React.Component {
   };
 
   sortByName = () => {
-    if (this.state.descending === true) {
+    if (this.state.nameDescending === true) {
       let ascending = this.state.employees.sort((a, b) => {
         let fa = a.name.first.toLowerCase(),
           fb = b.name.first.toLowerCase();
@@ -64,7 +64,7 @@ class App extends React.Component {
         }
         return 0;
       });
-      this.setState({ employees: ascending, descending: false });
+      this.setState({ employees: ascending, nameDescending: false });
     } else {
       console.log("false click");
       let descending = this.state.employees.sort((a, b) => {
@@ -79,12 +79,12 @@ class App extends React.Component {
         }
         return 0;
       });
-      this.setState({ employees: descending, descending: true });
+      this.setState({ employees: descending, nameDescending: true });
     }
   };
 
   sortByCity = () => {
-    if (this.state.city === true) {
+    if (this.state.cityDecending === true) {
       let ascending = this.state.employees.sort((a, b) => {
         let fa = a.location.city.toLowerCase(),
           fb = b.location.city.toLowerCase();
@@ -97,7 +97,7 @@ class App extends React.Component {
         }
         return 0;
       });
-      this.setState({ employees: ascending, city: false });
+      this.setState({ employees: ascending, cityDecending: false });
     } else {
       console.log("false click");
       let descending = this.state.employees.sort((a, b) => {
@@ -112,7 +112,7 @@ class App extends React.Component {
         }
         return 0;
       });
-      this.setState({ employees: descending, city: true });
+      this.setState({ employees: descending, cityDecending: true });
     }
   };
 
@@ -131,9 +131,9 @@ class App extends React.Component {
         <Employee
           employees={searchName}
           sortName={this.sortByName}
-          toggleName={this.state.descending}
+          toggleName={this.state.nameDescending}
           sortCity={this.sortByCity}
-          toggleCity={this.state.city}
+          toggleCity={this.state.cityDecending}
         />
       </Wrapper>
     );

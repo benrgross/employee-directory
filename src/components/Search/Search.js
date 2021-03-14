@@ -15,12 +15,6 @@ export const Search = ({ handleChange, value }) => {
             placeholder="Search by Name"
             aria-label="Search"
           />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
         </form>
       </div>
     </div>

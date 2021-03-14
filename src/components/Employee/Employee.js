@@ -21,11 +21,10 @@ export const Employee = ({
                 <th className="arrow" onClick={() => sortName()}>
                   Name {toggleName ? <FaArrowDown /> : <FaArrowUp />}
                 </th>
-                {/* <th>Last Name</th> */}
-                <th>Email</th>
                 <th className="arrow" onClick={() => sortCity()}>
                   City {toggleCity ? <FaArrowDown /> : <FaArrowUp />}{" "}
                 </th>
+                <th>Email</th>
 
                 <th>Phone</th>
               </tr>
@@ -44,8 +43,8 @@ export const Employee = ({
                       />
                     </td>
                     <td>{`${employee.name.first}  ${employee.name.last}`}</td>
-                    <td>{employee.email}</td>
                     <td>{employee.location.city}</td>
+                    <td>{employee.email}</td>
                     <td>{employee.cell}</td>
                   </tr>
                 );
