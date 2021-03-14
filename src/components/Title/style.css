@@ -1,6 +1,45 @@
 .nav-con {
-  background-color: #e8f8fc;
   height: 100px;
   width: 100%;
   font-size: 45px;
+  border: 1px solid blue;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  font-size: 45px;
+  background-color: #fdf86d;
+  background-image: linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%);
+}
+
+.h4 {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 40px;
+}
+
+.h5 {
+  margin-top: 0px;
+  margin-left: 70px;
+}
+
+.logo {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* transform: rotate(3deg); */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

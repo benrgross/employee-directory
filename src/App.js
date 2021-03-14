@@ -125,17 +125,19 @@ class App extends React.Component {
       );
     });
     return (
-      <Wrapper>
+      <>
         <Title />
-        <Search value={this.state.search} handleChange={this.handleChange} />
-        <Employee
-          employees={searchName}
-          sortName={this.sortByName}
-          toggleName={this.state.nameDescending}
-          sortCity={this.sortByCity}
-          toggleCity={this.state.cityDecending}
-        />
-      </Wrapper>
+        <Wrapper>
+          <Search value={this.state.search} handleChange={this.handleChange} />
+          <Employee
+            employees={searchName}
+            sortName={this.sortByName}
+            toggleName={this.state.nameDescending}
+            sortCity={this.sortByCity}
+            toggleCity={this.state.cityDecending}
+          />
+        </Wrapper>
+      </>
     );
   }
 }
