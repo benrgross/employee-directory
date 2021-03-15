@@ -20,6 +20,8 @@ find the deployed app here: https://benrgross.github.io/employee-directory/
 
 ## License
 
+![demo-gif](/employee-dir.gif)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions
