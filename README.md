@@ -16,11 +16,11 @@ This app is built using React JS and takes advantage of it state properties and 
 
 ## Usage
 
+![demo-gif](/public/employee-dir.gif)
+
 find the deployed app here: https://benrgross.github.io/employee-directory/
 
 ## License
-
-![demo-gif](/public/employee-dir.gif)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
