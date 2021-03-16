@@ -8,11 +8,12 @@ export const Search = ({ handleChange, value }) => {
         <form className="form-inline my-2 my-lg-0 ">
           <input
             onChange={(event) => handleChange(event)}
+            style={{ width: "260px" }}
             value={value}
             className="form-control mr-sm-2 shadow"
             name="search"
             type="text"
-            placeholder="Search by Name"
+            placeholder="Search by First or Last Name"
             aria-label="Search"
           />
         </form>
