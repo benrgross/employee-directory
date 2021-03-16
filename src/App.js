@@ -1,10 +1,11 @@
 import React from "react";
-import axios from "axios";
+
 import Title from "./components/Title/Title";
 import Wrapper from "./components/Wrapper/index";
 import Employee from "./components/Employee/Employee";
 import Search from "./components/Search/Search";
 import "./App.css";
+import API from "./utils/API";
 
 class App extends React.Component {
   state = {
@@ -26,7 +27,8 @@ class App extends React.Component {
   getEmployees = async () => {
     const {
       data: { results },
-    } = await axios.get("https://randomuser.me/api/?results=100&nat=us");
+    } = await API.data();
+    // axios.get("https://randomuser.me/api/?results=100&nat=us");
     // sort data descending
     let nameDescending = results.sort((a, b) => {
       let fa = a.name.first.toLowerCase(),
@@ -124,6 +126,9 @@ class App extends React.Component {
     let searchName = this.state.employees.filter((employee) => {
       return (
         employee.name.first
+          .toLowerCase()
+          .indexOf(this.state.search.toLowerCase()) !== -1 ||
+        employee.name.last
           .toLowerCase()
           .indexOf(this.state.search.toLowerCase()) !== -1
       );
